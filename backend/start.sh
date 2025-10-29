@@ -1,3 +1,20 @@
+#!/usr/bin/env bash
+set -o errexit
 
-pip install -r requirement.txt
-uvicorn main:app --host 0.0.0.0 --port $PORT
+# Install ffmpeg + dependencies
+apt-get update && apt-get install -y \
+    ffmpeg \
+    libavformat-dev \
+    libavcodec-dev \
+    libavdevice-dev \
+    libavutil-dev \
+    libavfilter-dev \
+    libswscale-dev \
+    libswresample-dev \
+    pkg-config
+
+# Upgrade core build tools
+pip install --upgrade pip setuptools wheel build
+
+# Install Python dependencies
+pip install -r requirements.txt
