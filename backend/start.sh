@@ -3,6 +3,7 @@ set -o errexit
 
 # Upgrade pip and setuptools
 pip install --upgrade pip setuptools wheel
+apt-get update && apt-get install -y ffmpeg
 
 # Install Python dependencies
 pip install -r requirement.txt
