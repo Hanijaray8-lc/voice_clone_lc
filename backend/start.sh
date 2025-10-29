@@ -1,20 +1,11 @@
 #!/usr/bin/env bash
 set -o errexit
 
-# Install ffmpeg + dependencies
-apt-get update && apt-get install -y \
-    ffmpeg \
-    libavformat-dev \
-    libavcodec-dev \
-    libavdevice-dev \
-    libavutil-dev \
-    libavfilter-dev \
-    libswscale-dev \
-    libswresample-dev \
-    pkg-config
-
-# Upgrade core build tools
-pip install --upgrade pip setuptools wheel build
+# Upgrade pip and setuptools
+pip install --upgrade pip setuptools wheel
 
 # Install Python dependencies
 pip install -r requirement.txt
+
+# Start the FastAPI app
+uvicorn app.main:app --host 0.0.0.0 --port $PORT
