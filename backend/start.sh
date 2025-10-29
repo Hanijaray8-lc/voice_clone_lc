@@ -17,4 +17,4 @@ apt-get update && apt-get install -y \
 pip install --upgrade pip setuptools wheel build
 
 # Install Python dependencies
-pip install -r requirements.txt
+pip install -r requirement.txt
