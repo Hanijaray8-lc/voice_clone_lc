@@ -1,3 +1,8 @@
+pip>=25.0
+setuptools>=70.0
+wheel>=0.42.0
+build>=1.2.2
+
 fastapi
 uvicorn[standard]
 motor
@@ -7,7 +12,6 @@ PyJWT
 python-multipart
 librosa==0.9.1
 faster-whisper==0.9.0
-av==16.0.1
 pydub==0.25.1
 wavmark==0.0.3
 numpy==1.22.0
@@ -22,6 +26,6 @@ jieba==0.42.1
 gradio==3.48.0
 langid==1.1.6
 ffmpeg-python
-TTS
+TTS==0.21.0
 noisereduce==3.0.3
 soundfile
